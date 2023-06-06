@@ -1,0 +1,181 @@
+.range {
+  @media (min-width: @tablet-width) {
+    padding-left: 7px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 0;
+  }
+}
+
+.range__wrapper {
+  padding-top: 10px;
+  margin-bottom: 37px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 33px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 34px;
+  }
+}
+
+.range__scale {
+  position: relative;
+  background-color: #e2e2e2;
+  height: 2px;
+
+  @media (min-width: @tablet-width) {
+    width: 220px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 318px;
+  }
+}
+
+.range__bar {
+  height: 4px;
+  background-color: @altcolor-primary-lighter;
+  position: relative;
+}
+
+.range__toggle {
+  .button-default;
+  position: absolute;
+  border: 2px solid @altcolor-primary-lighter;
+  background-color: @basecolor-light;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  top: calc(50% - 24px/2);
+
+  &--max {
+    right: -8px;
+
+    @media (min-width: @tablet-width) {
+      right: -2px;
+    }
+
+    @media (min-width: @desktop-width) {
+      right: -12px;
+    }
+  }
+
+  &:not(:disabled):hover::before,
+  &:focus::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: @altcolor-primary-opacity;
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    border-color: @basecolor-primary;
+  }
+
+  &:active::before {
+    background-color: @basecolor-primary;
+  }
+
+  &:disabled {
+    border-color: #e2e2e2;
+    background-color: @bgcolor-lightest;
+    color: @basecolor-middle;
+    cursor: auto;
+  }
+}
+
+.range__input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.range__input {
+  outline-style: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  background-color: @basecolor-light;
+  border: 2px solid @altcolor-primary-lighter;
+  border-radius: 4px;
+  font-family: @title-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: @basecolor-dark;
+  width: 118px;
+  height: 38px;
+  box-sizing: border-box;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    width: 93px;
+    height: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 134px;
+  }
+
+  &:active {
+    border-color: @altcolor-primary-darker;
+  }
+
+  &:disabled {
+    border-color: #e2e2e2;
+    background-color: @bgcolor-lightest;
+    color: @basecolor-middle;
+    cursor: auto;
+  }
+}
+
+.range__input::-webkit-outer-spin-button,
+.range__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.range__input-separator {
+  display: block;
+  width: 9px;
+  height: 2px;
+  background-color: @basecolor-middle;
+  align-self: center;
+}
+
+.range__input-range:disabled ~ .range__toggle {
+  border-color: @basecolor-middle;
+  background-color: @bgcolor-lightest;
+  cursor: auto;
+}
+
+.range__input-range:disabled ~ .range__bar {
+  background-color: @basecolor-middle;
+  cursor: auto;
+}
+
+.range__input-range:not(:disabled) + .range__toggle:hover::before,
+.range__input-range:not(:disabled) + .range__toggle:focus::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}

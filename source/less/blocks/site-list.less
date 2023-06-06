@@ -1,0 +1,116 @@
+.site-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .list-default;
+  z-index: 2;
+  background-color: @basecolor-light;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    max-width: 430px;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 500px;
+  }
+}
+
+.site-list__item {
+  display: flex;
+  min-height: 57px;
+  border-bottom: 1px solid @basecolor-secondary;
+  box-sizing: border-box;
+  background-color: @basecolor-light;
+
+  &:first-child {
+    border-top: 1px solid @basecolor-secondary;
+
+    @media (min-width: @tablet-width) {
+      border: none;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    border: none;
+    min-height: auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-right: 20px;
+  }
+
+  &:last-child {
+    @media (min-width: @desktop-width) {
+      margin-right: 0;
+    }
+  }
+
+  &:active {
+    background-color: @basecolor-secondary;
+    color: @basecolor-dark;
+  }
+}
+
+.site-list__item-link {
+  padding: 20px 60px;
+  margin: 0 auto;
+  color: @basecolor-dark;
+  font-family: @title-font;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+
+  @media (min-width: @tablet-width) {
+    min-height: auto;
+    padding: 32px 20px;
+  }
+
+  &--active::after {
+    @media (min-width: @tablet-width) {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: @basecolor-primary;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @media (min-width: @tablet-width) {
+      color: @basecolor-primary;
+      outline: none;
+    }
+  }
+
+  &:active {
+    @media (min-width: @desktop-width) {
+      color: @basecolor-primary;
+    }
+  }
+}
+
+.site-list__item-link--main {
+  @media (min-width: @tablet-width) {
+    color: @basecolor-primary;
+  }
+
+  &-active::after {
+    @media (min-width: @desktop-width) {
+      background-color: @basecolor-primary;
+    }
+  }
+}

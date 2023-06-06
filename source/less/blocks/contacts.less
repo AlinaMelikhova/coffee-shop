@@ -1,0 +1,28 @@
+.contacts__item {
+  margin-bottom: 16px;
+  padding-left: 19px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--address::before {
+    .footer__icon;
+    background-image: url("../../img/geotag.svg");
+  }
+
+  &--tel::before {
+    .footer__icon;
+    background-image: url("../../img/phone.svg");
+  }
+}
+
+.contacts__item-description {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: @basecolor-dark;
+}

@@ -1,0 +1,230 @@
+.catalog {
+  background-color: @bgcolor-lightest;
+}
+
+.catalog__wrapper {
+  padding-top: 50px;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 80px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 100px;
+  }
+}
+
+.catalog__badge {
+  margin-bottom: 4px;
+}
+
+.catalog__title {
+  margin-bottom: 21px;
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 40px;
+  }
+}
+
+.catalog__desktop-wrapper {
+  @media (min-width: @desktop-width) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.catalog__form {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @desktop-width) {
+    padding-right: 30px;
+  }
+}
+
+.catalog__form-wrapper {
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 317px;
+    flex-direction: column;
+  }
+}
+
+.catalog__form-filter-group {
+  margin: 0;
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+    margin-top: -3px;
+
+    @media (min-width: @tablet-width) {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 30px;
+  }
+
+  &--range {
+    @media (min-width: @tablet-width) {
+      margin-right: 3%;
+    }
+
+    @media (min-width: @desktop-width) {
+      margin-right: 0;
+    }
+  }
+
+  &--milk {
+    @media (min-width: @tablet-width) {
+      margin-right: 5%;
+    }
+
+    @media (min-width: @desktop-width) {
+      margin-right: 0;
+    }
+  }
+}
+
+.catalog__form-buttons-wrapper {
+  padding-top: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 39px;
+    flex-direction: row;
+    padding-left: 25%;
+    justify-content: start;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 14px;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 0;
+  }
+}
+
+.catalog__form-submit {
+  padding: 10px 15px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  font-size: 13px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+    margin-right: 30px;
+    padding: 8px 4px;
+    font-size: 14px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-right: 18px;
+  }
+}
+
+.catalog__form-reset {
+  border: none;
+  background-color: @basecolor-light;
+  padding: 11px 17px;
+  font-family: @title-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: @basecolor-primary;
+  border-radius: 4px;
+  min-width: 160px;
+  box-sizing: border-box;
+
+  @media (min-width: @tablet-width) {
+    padding: 8px 5px;
+    min-width: 138px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-width: 150px;
+  }
+}
+
+.catalog__list-wrapper {
+  padding-top: 38px;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 0;
+  }
+}
+
+.catalog__sorting-label {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  font-family: @title-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    justify-content: end;
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: -3px;
+    margin-bottom: 25px;
+  }
+}
+
+.catalog__sorting {
+  padding: 4px 30px 4px 0;
+  background-color: transparent;
+  border: none;
+  font-family: @title-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: @basecolor-primary;
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 10px 6px;
+  background-position-x: 145px;
+  background-position-y: 14px;
+  background-image: url("../../img/sorting-mark.svg");
+  max-width: 165px;
+  box-sizing: border-box;
+
+  @media (min-width: @tablet-width) {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: @basecolor-secondary;
+  }
+}
