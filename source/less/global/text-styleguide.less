@@ -1,0 +1,71 @@
+.badge {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: @basecolor-primary;
+  display: block;
+}
+
+.section-title {
+  .title;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    font-size: 42px;
+    line-height: 64px;
+  }
+}
+
+.item-title {
+  .title;
+  font-size: 18px;
+  line-height: 32px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.footer-title {
+  .title;
+  font-size: 14px;
+  line-height: 20px;
+  color: @basecolor-primary;
+}
+
+.description {
+  font-family: @title-font;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.old-price {
+  font-family: @title-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  text-decoration-line: line-through;
+  color: @basecolor-primary;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: @basecolor-dark;
+}

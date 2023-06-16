@@ -1,0 +1,32 @@
+.footer-inner-list {
+  .list-default;
+}
+
+.footer-inner-list__item {
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer-inner-list__item-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: @basecolor-dark;
+  padding: 8px 0;
+  display: block;
+
+  &:hover,
+  &:focus {
+    color: @altcolor-primary-lighter;
+  }
+
+  &:active {
+    color: @altcolor-primary-darker;
+  }
+}

@@ -1,0 +1,44 @@
+.filter-group {
+  padding: 0;
+  border: none;
+}
+
+.filter-group__title {
+  font-family: @title-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: @basecolor-dark;
+  margin: 0;
+  margin-bottom: 22px;
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.filter-group__list {
+  .list-default;
+
+  &--origin {
+    margin-left: 2px;
+  }
+}
+
+.filter-group__item {
+  margin-bottom: 22px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  &--origin {
+    margin-bottom: 20px;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}

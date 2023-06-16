@@ -1,0 +1,137 @@
+.user-facilities {
+  .list-default;
+  display: flex;
+  flex-direction: row;
+  max-width: 200px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  @media (min-width: @desktop-width) {
+    max-width: 300px;
+  }
+}
+
+.user-facilities__item {
+  @media (min-width: @desktop-width) {
+    margin-left: 20px;
+  }
+
+  &:first-child {
+    @media (min-width: @desktop-width) {
+      margin-left: 0;
+    }
+  }
+
+  &--toggle {
+    @media (min-width: @tablet-width) {
+      display: none;
+    }
+  }
+}
+
+.user-facilities__button {
+  .button-default;
+  color: @basecolor-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  min-height: 60px;
+  background-color: transparent;
+  box-sizing: border-box;
+
+  @media (min-width: @tablet-width) {
+    min-height: 80px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 30px 20px;
+  }
+
+  &:active {
+    background-color: @basecolor-secondary;
+
+    @media (min-width: @desktop-width) {
+      color: @basecolor-primary;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: @basecolor-primary;
+    outline: none;
+  }
+}
+
+.user-facilities__button-icon {
+  display: block;
+
+  @media (min-width: @desktop-width) {
+    margin-right: 4px;
+  }
+}
+
+.user-facilities__button-text {
+  display: none;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+    font-family: @title-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: @basecolor-dark;
+  }
+}
+
+.user-facilities__button-toggle {
+  position: relative;
+
+  &--closed::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 1.5px;
+    top: 24px;
+    right: 22px;
+    background-color: @basecolor-dark;
+    box-shadow: 0 5px 0 0 @basecolor-dark, 0 10px 0 0 @basecolor-dark;
+  }
+
+  &--opened::after,
+  &--opened::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 1.5px;
+    top: 30px;
+    right: 22px;
+    background-color: @basecolor-dark;
+  }
+
+  &--opened::after {
+    transform: rotate(-45deg);
+  }
+
+  &--opened::before {
+    box-shadow: none;
+    transform: rotate(45deg);
+  }
+
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+
+  &--nojs,
+  &--nojs::before,
+  &--nojs::after {
+    display: none;
+  }
+
+  &:active {
+    background-color: @basecolor-secondary;
+  }
+}

@@ -1,0 +1,30 @@
+.page-nav {
+  position: absolute;
+  background-color: @basecolor-light;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  @media (min-width: @tablet-width) {
+    position: relative;
+    max-width: 430px;
+    width: max-content;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 500px;
+  }
+}
+
+.page-nav--closed {
+  display: none;
+
+  @media (min-width: @tablet-width) {
+    display: block;
+  }
+}
+
+.page-nav--nojs {
+  display: block;
+  z-index: 2;
+}

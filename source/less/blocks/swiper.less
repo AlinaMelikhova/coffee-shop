@@ -1,0 +1,120 @@
+.swiper {
+  width: 100%;
+}
+
+.swiper__wrapper {
+  width: 1px;
+  align-items: stretch;
+}
+
+.swiper__slide {
+  height: auto;
+
+  @media (min-width: @tablet-width) {
+    height: 100%;
+  }
+
+  @media (min-width: @desktop-width) {
+    height: auto;
+  }
+}
+
+.swiper__button {
+  .button-default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: @basecolor-primary;
+  content: "";
+  width: 20px;
+  height: 100%;
+  top: 0;
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+  }
+
+  &::after {
+    content: "";
+  }
+
+  &--prev {
+    left: 0;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      outline: none;
+      background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:not(:disabled):active {
+      background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &--next {
+    right: 0;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      outline: none;
+      background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:not(:disabled):active {
+      background: linear-gradient(270deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &:disabled {
+    cursor: auto;
+  }
+}
+
+.swiper__button:disabled .swiper__button-arrow {
+  color: @basecolor-middle;
+}
+
+.swiper__button-arrow {
+  &--next {
+    transform: rotate(180deg);
+  }
+}
+
+.swiper__pagination {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 57px;
+}
+
+.swiper-pagination-bullet {
+
+  display: none;
+
+  @media (min-width: @desktop-width) {
+    display: inline-block;
+    width: 62px;
+    height: 4px;
+    border-radius: 0%;
+    background-color: @basecolor-light;
+    opacity: 1;
+    .button-default;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: @basecolor-secondary;
+    outline: none;
+  }
+
+  &-active {
+    background-color: @basecolor-primary;
+
+    &:hover,
+    &:focus {
+      background-color: @basecolor-primary;
+    }
+  }
+}

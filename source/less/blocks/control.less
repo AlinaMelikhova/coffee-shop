@@ -1,0 +1,128 @@
+.control {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.control__mark-round {
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: @basecolor-light;
+  border-radius: 50%;
+  border: 2px solid @basecolor-middle;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+}
+
+.control__input:not(:disabled):not(:checked):hover + .control__mark-round,
+.control__input:not(:disabled):not(:checked):focus + .control__mark-round {
+  border: 2px solid @basecolor-primary;
+
+  &::before {
+    background-color: @altcolor-primary-opacity;
+  }
+}
+
+.control__input:checked + .control__mark-round {
+  border: 2px solid @basecolor-primary;
+
+  &::before {
+    background-color: @basecolor-primary;
+  }
+}
+
+.control__input:checked:disabled + .control__mark-round {
+  border: 2px solid #e2e2e2;
+  background-color: transparent;
+
+  &::before {
+    background-color: #e2e2e2;
+  }
+}
+
+.control__input:disabled + .control__mark-round {
+  border: 2px solid #e2e2e2;
+  background-color: transparent;
+}
+
+.control__mark-origin {
+  display: block;
+  cursor: pointer;
+  width: 42px;
+  height: 24px;
+  background-color: @basecolor-middle;
+  border-radius: 12px;
+  position: relative;
+  border: 2px solid @basecolor-middle;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: @basecolor-light;
+  }
+}
+
+.control__input:checked + .control__mark-origin {
+  background-color: @basecolor-primary;
+  border-color: @basecolor-primary;
+
+  &::before {
+    left: 18px;
+    background-color: @basecolor-light;
+  }
+}
+
+.control__input:not(:disabled):not(:checked):hover + .control__mark-origin,
+.control__input:not(:disabled):not(:checked):focus + .control__mark-origin {
+  border-color: @basecolor-primary;
+  background-color: @altcolor-primary-opacity;
+}
+
+.control__input:checked:disabled + .control__mark-origin {
+  border: 2px solid #e2e2e2;
+  background-color: #e2e2e2;
+
+  &::before {
+    left: 18px;
+    background-color: @basecolor-middle;
+  }
+}
+
+.control__input:disabled + .control__mark-origin {
+  border-color: #e2e2e2;
+  background-color: #e2e2e2;
+}
+
+.control__description {
+  font-size: 16px;
+  line-height: 24px;
+  color: @basecolor-dark;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.control__input:disabled ~ .control__description,
+.control__input:disabled + .control__mark-origin,
+.control__input:disabled + .control__mark-round {
+  cursor: auto;
+  color: @basecolor-middle;
+}

@@ -1,0 +1,90 @@
+.products {
+  .list-default;
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: repeat(3, 317px);
+  }
+}
+
+.products__item {
+  list-style-type: none;
+  margin-bottom: 20px;
+  padding: 40px 20px 20px;
+  background-color: @basecolor-light;
+  border-radius: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+    padding: 50px 30px 30px;
+  }
+
+  &:hover,
+  &:focus {
+    @media (min-width: @desktop-width) {
+      box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.products__item-img-link {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 24px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.products__item-img {
+  display: block;
+  margin: 0 auto;
+}
+
+.products__item-title {
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 4px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 10px;
+  }
+}
+
+.products__item-description {
+  margin-bottom: 16px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.products__item-purchase {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.products__item-button {
+  padding-left: 46px;
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-image: url("../../img/plus-busket.svg");
+  background-size: 20px 16px;
+  background-position-x: 20px;
+  background-position-y: 50%;
+}
