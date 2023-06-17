@@ -38,7 +38,7 @@
 .range__bar {
   height: 4px;
   background-color: @altcolor-primary-lighter;
-  position: relative;
+  position: absolute;
 }
 
 .range__toggle {
@@ -52,14 +52,14 @@
   top: calc(50% - 24px/2);
 
   &--max {
-    right: -8px;
+    left: calc(90% - 12px);
 
     @media (min-width: @tablet-width) {
-      right: -2px;
+      left: calc(90% - 12px);
     }
 
     @media (min-width: @desktop-width) {
-      right: -12px;
+    left: calc(90% - 12px);
     }
   }
 
